@@ -1,12 +1,28 @@
 <?php
-define("GOAL", 40);
+// define("GOAL", 40);
+// $total = 0;
+// for ($i = 1; $i <= GOAL; $i++) {
+//     $n = rand(1, 6);
+//     $total += $n;
+//     echo "{$i}回目={$n}";
+//     echo "<br/>";
+//     if ($total >= GOAL) {
+//         echo "合計{$i}回でゴールしました";
+//         echo "<br/>";
+//         break;
+//     }
+// }
+
+
 $total = 0;
-for ($i = 1; $i <= GOAL; $i++) {
+$i = 1;
+while ($total <= 40) {
     $n = rand(1, 6);
     $total += $n;
     echo "{$i}回目={$n}";
     echo "<br/>";
-    if ($total >= GOAL) {
+    $i++;
+    if ($total >= 40) {
         echo "合計{$i}回でゴールしました";
         echo "<br/>";
         break;
@@ -14,6 +30,10 @@ for ($i = 1; $i <= GOAL; $i++) {
 }
 
 
+
+
+
+date_default_timezone_set('Asia/Tokyo');
 $time = intval(date('H'));
 if (4 <= $time && $time <= 11) {
     echo "今{$time}時台です";
