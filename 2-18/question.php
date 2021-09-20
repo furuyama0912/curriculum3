@@ -8,8 +8,8 @@ $language = ["PHP","Python","JAVA","HTML"];
 $command = ["join","select","insert","update"];
 //② ①で作成した、配列から正解の選択肢の変数を作成してください
 $answer1 = $ports[0];
-$answer2 = $language[0];
-$answer3 = $command[0];
+$answer2 = $language[3];
+$answer3 = $command[1];
 ?>
 <!--フォームの作成 通信はPOST通信で-->
 <p>お疲れ様です<?php echo $my_name; ?>さん</p>
