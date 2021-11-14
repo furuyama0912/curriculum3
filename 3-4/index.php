@@ -39,7 +39,17 @@ $i=$getuser -> getUserData();
         <tr>
             <td><?php echo  $val['id']?></td>
             <td><?php echo  $val['title']?></td>
-            <td><?php echo  $val['category_no']?></td>
+            <td><?php  switch($val['category_no']){
+            case(1):
+                $category = '食事';
+            break;
+            case(2):
+                $category = '旅行';
+            break;
+            case(3):
+                $category = 'その他';
+            break;}
+            echo  $category?></td>
             <td><?php echo  $val['comment']?></td>
             <td><?php echo  $val['created']?></td>
         </tr>
@@ -50,14 +60,3 @@ $i=$getuser -> getUserData();
 <footer>
     <p>Y&I group.inc</p>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
