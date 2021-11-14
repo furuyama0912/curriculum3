@@ -62,7 +62,7 @@ if (!empty($_POST)) {
         <title>ログイン画面</title>
     </head>
     <body>
-        <h2>ログイン画面　<button tipe="button" onclick="location.href='//localhost/LetsEngineer/curriculum/4-2/signUp.php'">新規登録画面</button></h2>
+        <h2>ログイン画面　<button tipe="button" onclick="location.href='signUp.php'">新規登録画面</button></h2>
         <form method="post" action="">
             <input type="text" name="name" size="15" placeholder="ユーザー名"><br><br>
             <input type="text" name="pass" size="15" placeholder="パウワード"><br><br>

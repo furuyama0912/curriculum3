@@ -13,3 +13,11 @@ function check_user_logged_in() {
         exit;
     }
 }
+
+function redirect_main_unless_parameter($id) {
+    session_start();
+    if (empty($id)) {
+        header("Location: main.php");
+        exit;
+    }
+}

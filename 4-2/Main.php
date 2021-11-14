@@ -31,8 +31,8 @@ try {
 </head>
 <body>
     <h1>在庫一覧画面</h1>
-    <button tipe="button" onclick="location.href='//localhost/LetsEngineer/curriculum/4-2/create-post.php'" >新規登録</button>
-    <button tipe="button" onclick="location.href='//localhost/LetsEngineer/curriculum/4-2/Logout.php'">ログアウト</button><br />
+    <button type="button" onclick="location.href='create-post.php'" >新規登録</button>
+    <button type="button" onclick="location.href='Logout.php'">ログアウト</button><br />
     <table>
     <tr>
         <td>タイトル</td>
@@ -45,7 +45,7 @@ try {
             <td><?php echo $row['title']; ?></td>
             <td><?php echo $row['date']; ?></td>
             <td><?php echo $row['stock']; ?></td>
-            <td><button onclick="location.href='//localhost/LetsEngineer/curriculum/4-2/delete-post.php?id=<?php echo $row['id']; ?>'" >削除</button></td>
+            <td><button onclick="location.href='delete-post.php?id=<?php echo $row['id']; ?>'" >削除</button></td>
         </tr>
     <?php } ?>
 </table>
