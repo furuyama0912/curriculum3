@@ -19,9 +19,9 @@ class CreateSnsTable extends Migration
             $table->string('body',255); 
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
-            
             $table->softDeletes();
         });
+        
     }
 
     /**

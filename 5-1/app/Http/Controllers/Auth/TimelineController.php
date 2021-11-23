@@ -6,14 +6,14 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use \App\sns;
+use \App\Post;
 use App\User;
 
 class TimelineController extends Controller
 {
     public function showTimelinePage()
     {
-        $sns = sns::latest()->get(); 
+        $sns = Post::latest()->get(); 
         foreach($sns as $s)
         {
             $users = User::where('id',$s->user_id)
@@ -28,7 +28,7 @@ class TimelineController extends Controller
                                 'sns_id' => $s->user_id,
                                 'created_at' => $s->created_at,
                             );
-             }
+            }
         }
         $auths = Auth::user();
         return view('auth.timeline', compact('snss','auths')); // resource/views/auth/timeline.blade.phpを表示する
@@ -39,7 +39,7 @@ class TimelineController extends Controller
         $validator = $request->validate([ // これだけでバリデーションできるLaravelすごい！
             'body' => [ 'string', 'max:255'], // 必須・文字であること・280文字まで（ツイッターに合わせた）というバリデーションをします（ビューでも軽く説明します。）
         ]);
-        sns::create([ // tweetテーブルに入れるよーっていう合図
+        Post::create([ // tweetテーブルに入れるよーっていう合図
             'user_id' => Auth::user()->id, // Auth::user()は、現在ログインしている人（つまりツイートしたユーザー）
             'body' => $request->tweet, // ツイート内容
         ]);
@@ -47,7 +47,7 @@ class TimelineController extends Controller
     }
     public function delete (Request $request)
         {
-        sns::find($request->id)->delete();
+        Post::find($request->id)->delete();
         return back(); 
         }
 }
